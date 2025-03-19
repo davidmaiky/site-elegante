@@ -4,10 +4,14 @@
 :root {
   --primary-color: #6c63ff;
   --secondary-color: #f50057;
-  --dark-color: #2a2a2a;
-  --light-color: #ffffff;
-  --gray-color: #f5f5f5;
-  --text-color: #333333;
+  --dark-color: #121212;
+  --darker-color: #0a0a0a;
+  --light-color: #f5f5f5;
+  --gray-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --card-bg: #1a1a1a;
+  --border-color: #333333;
   --transition: all 0.3s ease;
 }
 
@@ -25,6 +29,7 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: var(--text-color);
+  background-color: var(--dark-color);
   overflow-x: hidden;
 }
 
@@ -42,6 +47,7 @@ section {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.3;
+  color: var(--light-color);
 }
 
 a {
@@ -89,6 +95,7 @@ img {
   margin-bottom: 60px;
   text-align: center;
   position: relative;
+  color: var(--light-color);
 }
 
 .section-title::after {
@@ -108,7 +115,7 @@ img {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: rgba(108, 99, 255, 0.3);
+  background: rgba(108, 99, 255, 0.5);
   pointer-events: none;
   transform: translate(-50%, -50%);
   z-index: 9999;
@@ -129,8 +136,8 @@ header {
 }
 
 header.scrolled {
-  background: var(--light-color);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  background: var(--darker-color);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   padding: 15px 0;
 }
 
@@ -150,10 +157,6 @@ nav {
   transition: var(--transition);
 }
 
-header.scrolled .logo {
-  color: var(--dark-color);
-}
-
 .nav-links {
   display: flex;
   gap: 30px;
@@ -164,10 +167,6 @@ header.scrolled .logo {
   font-weight: 500;
   position: relative;
   transition: var(--transition);
-}
-
-header.scrolled .nav-link {
-  color: var(--dark-color);
 }
 
 .nav-link::after {
@@ -199,14 +198,10 @@ header.scrolled .nav-link {
   transition: var(--transition);
 }
 
-header.scrolled .bar {
-  background: var(--dark-color);
-}
-
 /* Hero Section */
 .hero {
   height: 100vh;
-  background: linear-gradient(135deg, #6c63ff 0%, #5a52e0 100%);
+  background: linear-gradient(135deg, #2b2640 0%, #1a1730 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -269,7 +264,7 @@ header.scrolled .bar {
 .shape {
   position: absolute;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(108, 99, 255, 0.1);
   backdrop-filter: blur(5px);
   animation: float 6s ease-in-out infinite;
 }
@@ -312,7 +307,7 @@ header.scrolled .bar {
 
 /* About Section */
 .about {
-  background: var(--light-color);
+  background: var(--dark-color);
 }
 
 .about-content {
@@ -332,6 +327,7 @@ header.scrolled .bar {
   overflow: hidden;
   border-radius: 10px;
   background: url('https://source.unsplash.com/random/600x800?team') center/cover no-repeat;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .image-overlay {
@@ -340,7 +336,7 @@ header.scrolled .bar {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(108, 99, 255, 0.2) 0%, rgba(245, 0, 87, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.3) 0%, rgba(245, 0, 87, 0.3) 100%);
 }
 
 .about-text {
@@ -350,12 +346,12 @@ header.scrolled .bar {
 .about-text h3 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: var(--dark-color);
+  color: var(--light-color);
 }
 
 .about-text p {
   margin-bottom: 20px;
-  color: #666;
+  color: var(--text-muted);
 }
 
 .stats {
@@ -377,7 +373,7 @@ header.scrolled .bar {
 
 .stat-label {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-muted);
 }
 
 /* Services Section */
@@ -392,17 +388,19 @@ header.scrolled .bar {
 }
 
 .service-card {
-  background: var(--light-color);
+  background: var(--card-bg);
   padding: 40px 30px;
   border-radius: 10px;
   text-align: center;
   transition: var(--transition);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
 }
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: var(--primary-color);
 }
 
 .service-icon {
@@ -427,15 +425,16 @@ header.scrolled .bar {
 .service-card h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
+  color: var(--light-color);
 }
 
 .service-card p {
-  color: #666;
+  color: var(--text-muted);
 }
 
 /* Portfolio Section */
 .portfolio {
-  background: var(--light-color);
+  background: var(--dark-color);
 }
 
 .portfolio-filter {
@@ -448,8 +447,9 @@ header.scrolled .bar {
 
 .filter-btn {
   padding: 8px 20px;
-  background: transparent;
-  border: 1px solid #ddd;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
   border-radius: 30px;
   cursor: pointer;
   transition: var(--transition);
@@ -471,13 +471,16 @@ header.scrolled .bar {
 .portfolio-item {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   transition: var(--transition);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
 }
 
 .portfolio-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: var(--primary-color);
 }
 
 .portfolio-image {
@@ -503,7 +506,7 @@ header.scrolled .bar {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(108, 99, 255, 0.9);
+  background: rgba(26, 23, 48, 0.9);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -532,6 +535,7 @@ header.scrolled .bar {
   transition: var(--transition);
   transition-delay: 0.2s;
   margin-bottom: 20px;
+  color: var(--text-muted);
 }
 
 .portfolio-link {
@@ -584,6 +588,11 @@ header.scrolled .bar {
 .contact-item h3 {
   font-size: 1.2rem;
   margin-bottom: 5px;
+  color: var(--light-color);
+}
+
+.contact-item p {
+  color: var(--text-muted);
 }
 
 .social-links {
@@ -595,14 +604,15 @@ header.scrolled .bar {
 .social-link {
   width: 40px;
   height: 40px;
-  background: var(--light-color);
+  background: var(--card-bg);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--primary-color);
   transition: var(--transition);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
 }
 
 .social-link:hover {
@@ -619,12 +629,13 @@ header.scrolled .bar {
 .form-group input, .form-group textarea {
   width: 100%;
   padding: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   transition: var(--transition);
-  background: var(--light-color);
+  background: var(--card-bg);
+  color: var(--text-color);
 }
 
 .form-group textarea {
@@ -636,7 +647,7 @@ header.scrolled .bar {
   position: absolute;
   top: 15px;
   left: 15px;
-  color: #999;
+  color: var(--text-muted);
   transition: var(--transition);
   pointer-events: none;
 }
@@ -651,7 +662,7 @@ header.scrolled .bar {
   top: -10px;
   left: 10px;
   font-size: 0.8rem;
-  background: var(--light-color);
+  background: var(--card-bg);
   padding: 0 5px;
   color: var(--primary-color);
 }
@@ -662,8 +673,8 @@ header.scrolled .bar {
 
 /* Footer */
 footer {
-  background: var(--dark-color);
-  color: var(--light-color);
+  background: var(--darker-color);
+  color: var(--text-color);
   padding: 80px 0 20px;
 }
 
@@ -678,17 +689,20 @@ footer {
 .footer-logo h2 {
   font-size: 2rem;
   margin-bottom: 15px;
+  color: var(--light-color);
 }
 
 .footer-logo p {
   opacity: 0.8;
   max-width: 300px;
+  color: var(--text-muted);
 }
 
 .footer-links h3, .footer-newsletter h3 {
   font-size: 1.2rem;
   margin-bottom: 20px;
   position: relative;
+  color: var(--light-color);
 }
 
 .footer-links h3::after, .footer-newsletter h3::after {
@@ -710,6 +724,7 @@ footer {
 .footer-links a {
   opacity: 0.8;
   transition: var(--transition);
+  color: var(--text-muted);
 }
 
 .footer-links a:hover {
@@ -720,6 +735,7 @@ footer {
 .footer-newsletter p {
   opacity: 0.8;
   margin-bottom: 20px;
+  color: var(--text-muted);
 }
 
 .newsletter-form {
@@ -732,6 +748,10 @@ footer {
   border: none;
   border-radius: 5px 0 0 5px;
   font-family: 'Poppins', sans-serif;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-right: none;
 }
 
 .newsletter-form .btn {
@@ -750,6 +770,7 @@ footer {
 .footer-bottom p {
   opacity: 0.7;
   font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 /* Responsive Styles */
@@ -779,7 +800,7 @@ footer {
     right: -100%;
     width: 70%;
     height: 100vh;
-    background: var(--dark-color);
+    background: var(--darker-color);
     flex-direction: column;
     align-items: center;
     justify-content: center;
